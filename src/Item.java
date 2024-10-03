@@ -11,6 +11,13 @@ public class Item {
         return name;
     }
 
+    public String toString() {
+        return name;
+    }
+    public boolean equals(String s) {
+        return name.equals(s);
+    }
+
     public String getDescription() {
         return description;
     }

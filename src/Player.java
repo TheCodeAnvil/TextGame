@@ -45,7 +45,23 @@ public class Player {
                 return;
             }
         }
-        System.out.println("There's no such item here.");
+        checkForWordInString(itemName, getCurrentRoom().getDescription());
+    }
+
+    private void checkForWordInString(String word, String s){
+        String[] stringSplit = s.split(" ");
+        int i = 0;
+        while(true) {
+            if(stringSplit[i].equals(word)) {
+                System.out.println("You can't take the '" + word + "'!");
+                break;
+            }
+            if(i == (stringSplit.length - 1)) {
+                System.out.println("I don't see any '" + word + "' here.");
+                break;
+            }
+            i++;
+        }
     }
 
     public void showInventory() {
